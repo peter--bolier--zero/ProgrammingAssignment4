@@ -25,7 +25,7 @@ The dataset includes the following files:
 =========================================
 
 - 'README.md'
-- tidyactivities.csv : The tidy dataset as a results of clean up of the merged train en test sets. 
+- 'activities.txt' : The tidy dataset as a results of clean up of the merged train en test sets. 
 - 'features_info.txt': Shows information about the variables used on the feature vector.
 
 ### Cleaning steps
