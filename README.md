@@ -1,45 +1,16 @@
 ### Introduction
 
-As part of an assigmanet the data from the given set <uri> is used.
+As part of an assignment the data from the given set https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip is used.
 
 ### input data
-The train and test set from is first merged
+The train and test set are first merged
 
 Details can be found in the original descriptions.
 
-Original data structure was as follows:
+Original data is retrieved from: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-UCI HAR Dataset
-  README
-  activity_labels : Links the class labels with their activity name
-  features        : List of all features
-  features_info   : information about the variables used on the feature vector
-  |
-  +--- train(ing)
-  |      |
-  |      +- Inertial signals
-  |      |       |
-  |      |       +- body_acc_x_train.txt   : body acceleration : total - gravity in X Axis in 'g'.
-  |      |       +- body_acc_y_train.txt   : body acceleration : total - gravity in Y Axis in 'g'.
-  |      |       +- body_acc_z_train.txt   : body acceleration : total - gravity in Z Axis in 'g'.
-  |      |       +- body_gyro_x_train.txt  : angular velocity vector in X Axis in  radians/second.
-  |      |       +- body_gyro_y_train.txt  : angular velocity vector in Y Axis in  radians/second.
-  |      |       +- body_gyro_z_train.txt  : angular velocity vector in Z Axis in  radians/second.
-  |      |       +- total_acc_x_train.txt  : acceleration signal from the smartphone accelerometer X axis in 'g'.
-  |      |       +- total_acc_y_train.txt  : acceleration signal from the smartphone accelerometer Y axis in 'g'.
-  |      |       +- total_acc_z_train.txt  : acceleration signal from the smartphone accelerometer Z axis in 'g'.
-  |      |  
-  |      +- subject_train : each row identifies the subject who performed the activity for each window sample.
-  |      +- X_train       : dataset for traning
-  |      +- y_train       : labels
-  |
-  +--- test
-         |
-		 equivalent to training.
-
-The original dataset is merged into one datafile.
-Note that for the assignemnt only the mean and standard deviation had to be extracted, all other data was dropped.
-
+and merged into one datafile (as per assignemnt).
+Note that for the assignment only the mean and standard deviation had to be extracted, all other data was dropped.
 
 Merged structure
 
@@ -48,16 +19,18 @@ In the merged dataset only the processed data is used; all raw measurements (dat
 I.e. merged: subject_train, X_train, y_train and the test equivalents.
 
 
-Resulting in one table
-subject, activity, features (561)
+Resulting in one table with subject, activity, and features (79)
+
+The dataset includes the following files:
+=========================================
+
+- 'README.md'
+- tidyactivities.csv : The tidy dataset as a results of clean up of the merged train en test sets. 
+- 'features_info.txt': Shows information about the variables used on the feature vector.
 
 ### Cleaning steps
-Removed all columns except for the subject activity and all with a mean or standard deviation.
-
-
-
-
-All clooumns except mean and standard deviation were dropped.
+Removed all columns except for the subject,  activity and all features with a mean or standard deviation.
+The tidy set only contains the average of the data for each variable for each activity and each subject.
 
 
 mean(): Mean value
@@ -71,8 +44,5 @@ Each type of observational unit forms a table.
 
 
 
-Codebook
-
-
-
+Codebook: features_info.txt
 

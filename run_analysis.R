@@ -40,7 +40,17 @@ activity.map <- read.table("./activity_labels.txt")
 activities[,"activity"] <- mapvalues(activities[,"activity"], from=activity.map[,1], to=as.character(activity.map[,2]))
 
 # Tidy up
+# From the data set in step 4, 
+# creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+# So we need to determine the average for all clumns grouped by subject, activity.
+tidyset<-aggregate(a, by=list(activities$subject, activities$activity), FUN=mean)
 
-#
-# 
+# drop grouping columns (wich are (eaxtly the same as the subject/activity columns))
+tidyset<-tidyset[,3:83]
+
+# Append mean to the names so we know what kind of data e have, except for the firts two columns
+colnames(tidyset) <- c(colnames(tidyset)[1:2], paste((colnames(tidyset)[3:81]), "mean", sep="-"))
+
+# and save the data
+write.table(tidyset,"activities.txt", row.name=FALSE)

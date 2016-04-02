@@ -1,0 +1,46 @@
+Feature Selection 
+=================
+
+The features selected for this database come from the set https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip which is based on data which is avaible at : http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+subject : the subject performing the activity
+Activity: the decoded activity of the orginal set, i.e. the activity number is decoded into the activity text for readability.
+
+The 79 feautures are a subset of the original set. Only the feautures indicating a mean or standard deviation were kept:
+
+t: features prefixed with 't' are within the time domain,
+f: features prefixed with 'f' are in the frequency domain. This mean a Fast Fourier Transform (FFT) was applied to thos features.
+
+hese signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
